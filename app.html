@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RETROFIT</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="app.css">
 
@@ -13,8 +13,43 @@
 
 <body>
 
+  <!-- navbar -->
+
+  <nav class="bg-[#0d2436] text-white p-4 flex justify-between items-center shadow-md">
+    <div class="text-2xl font-bold">
+      <a href="#HOME" class="hover:text-[#d0b200]">RETROFIT</a>
+    </div>
+    <button id="nav-toggle" class="text-white text-2xl md:hidden">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="hidden md:flex space-x-10"> 
+      <a href="#HOME" class="hover:text-[#d0b200]">Home</a>
+      <a href="#ABOUT" class="hover:text-[#d0b200]">About</a>
+      <a href="#DIET PLANS" class="hover:text-[#d0b200]">Diet Plans</a>
+      <a href="#FOLLOW US" class="hover:text-[#d0b200]">Follow Us</a>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-full bg-[#0d2436] text-white md:hidden transform -translate-x-full transition-transform duration-300 shadow-md">
+    <div class="flex justify-end p-4">
+      <button id="close-menu" class="text-white text-2xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="flex flex-col items-center space-y-5 p-5">
+      <a href="#HOME" class="text-white text-lg font-['Poppins'] hover:text-[#d0b200]">Home</a>
+      <a href="#ABOUT" class="text-white text-lg font-['Poppins'] hover:text-[#d0b200]">About</a>
+      <a href="#DIET PLANS" class="text-white text-lg font-['Poppins'] hover:text-[#d0b200]">Diet Plans</a>
+      <a href="#FOLLOW US" class="text-white text-lg font-['Poppins'] hover:text-[#d0b200]">Follow Us</a>
+    </div>
+  </div>
+  
+
+  <!-- navbar -->
+
   <!-- HeroSection Section Starting -->
-  <section class="py-10">
+  <section class="py-10" id="HOME">
     <div class="2xl:container  bg-hero-section">
       <div class="w-[90%] mx-auto  h-[100%]">
         <div class="flex flex-col justify-center items-center gap-4 h-[100%] text-center">
@@ -38,7 +73,7 @@
 
   <!-- Why Choose Us Section Starting -->
  
-    <div class="2xl:container">
+    <div class="2xl:container" id="ABOUT">
 
       <div class="w-[90%] mx-auto grid grid-cols-1">
         <div class="py-6">
@@ -90,7 +125,7 @@
   <!-- Why Choose Us Section Ending -->
 
   <!-- Explore Menu Section Starting -->
-  <section class="py-10">
+  <section class="py-10" id="DIET PLANS">
     <div class="2xl:container">
 
       <div class="w-[90%] mx-auto grid grid-cols-1">
@@ -277,34 +312,54 @@
   <!-- Thank You Section Ending -->
 
   <!-- Follow Us Section Starting -->
-  <section class="py-10">
+  <section class="py-10" id="FOLLOW US">
     <div class="2xl:container">
       <div class="w-[90%] mx-auto grid grid-cols-1">
         <div class="flex flex-col justify-center items-center gap-4">
           <h2 class="text-[#183b56] text-3xl font-['Poppins'] font-bold">Follow Us</h2>
 
-          <div class="flex w-[100%] justify-center items-center gap-4">
-            <div class="h-14 w-14 rounded-full bg-[#faf7e8] flex flex-col justify-center items-center">
-              <svg viewbox="0 0 24 24" fill="currentColor" height="1.5em" width="1.5em">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
+          <div class="flex flex-col gap-8">
+            <!-- Team Member 1 -->
+            <div class="flex flex-col items-center">
+                <h3 class="text-lg font-semibold">MOHAMED TARIQ ALI S </h3>
+                <div class="flex w-[100%] justify-center items-center gap-4">
+                    <!-- Email -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=md.2004tariqali@gmail.com" class="h-14 w-14 rounded-full bg-[#faf7e8] flex flex-col justify-center items-center">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/mohamed-tariq-ali-63aa98278/" class="h-14 w-14 rounded-full bg-[#faf7e8] flex flex-col justify-center items-center" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/_mr.alone_king_25/" class="h-14 w-14 rounded-full bg-[#faf7e8] flex flex-col justify-center items-center" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
             </div>
-
-            <div class="h-14 w-14 rounded-full bg-[#faf7e8] flex flex-col justify-center items-center">
-              <svg viewbox="0 0 24 24" fill="currentColor" height="1.5em" width="1.5em">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
+        
+            <!-- Team Member 2 -->
+            <div class="flex flex-col items-center">
+                <h3 class="text-lg font-semibold">LEO ASHWIN V</h3>
+                <div class="flex w-[100%] justify-center items-center gap-4">
+                    <!-- Email -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=leoashwin22@gmail.com" class="h-14 w-14 rounded-full bg-[#faf7e8] flex flex-col justify-center items-center">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/leo-ashwin-859b99256/" class="h-14 w-14 rounded-full bg-[#faf7e8] flex flex-col justify-center items-center" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/leoashwin_22/" class="h-14 w-14 rounded-full bg-[#faf7e8] flex flex-col justify-center items-center" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
             </div>
-
-            <div class="h-14 w-14 rounded-full bg-[#faf7e8] flex flex-col justify-center items-center">
-              <svg viewbox="0 0 24 24" fill="currentColor" height="1.5em" width="1.5em">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-            </div>
-          </div>
+        </div>
+        
+        
+        
 
         </div>
       </div>
@@ -327,6 +382,12 @@
   </section>
   <!-- Footer Section Ending -->
 
+  <!-- Scroll up bar -->
+  <button id="scrollUpBtn" class="scroll-up-btn">
+    <i class="fas fa-angle-up"></i>
+  </button>
+
+  <script  src="script.js"></script>
 </body>
 
 </html>

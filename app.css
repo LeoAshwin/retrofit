@@ -23,3 +23,26 @@
   background-color: rgb(13, 222, 225);
   
 }
+
+.scroll-up-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: blue;
+}
+
+.scroll-up-btn:hover {
+  background-color:red;
+}
+
+.scroll-up-btn i {
+  pointer-events: none; 
+}
