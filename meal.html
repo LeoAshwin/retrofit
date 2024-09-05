@@ -1,46 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEALS</title>
-    <link rel="stylesheet" href="app.css">
+    <title>Meal Plans</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-<body class="meals">
-    <!-- meal plans day 1 starting -->
+    <style>
+        /* Apply the background image to the body */
+        body {
+            background-image: url("https://ik.imagekit.io/tariq/meals.jpg.jpg?updatedAt=1711122742183");
+            background-size: cover; /* Ensures the image covers the entire container */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            margin: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="text-white font-poppins">
+    <!-- Meal Plans Section -->
     <section class="py-10">
-        
-        <div class="2xl:container">
-        
-             <div class="w-[90%] mx-auto grid grid-cols-1">
-                <p class="text-slate-50 text-3xl font-['Poppins'] font-bold">EXPLORE TYPES OF MEALS</p>
-                <a href="#" target="_blank">
-                        <button class="bg-[#ea3d5f] px-8 py-10 rounded-lg text-[#fff]">DIET PLAN DAY 1</button>
-                            </a>
-                        </div>
-                       </div>
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-8">Explore Types of Meals</h1>
+            
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 mx-auto">
+                <!-- Diet Plan 1 -->
+                <div class="text-center">
+                    <a href="meal/diet1.html" target="_blank">
+                        <button class="bg-[#ea3d5f] px-8 py-4 rounded-lg text-white font-semibold text-lg transition duration-300 ease-in-out hover:bg-[#c6286c] focus:outline-none focus:ring-2 focus:ring-[#ea3d5f]">
+                           Simple Diet Plan 1
+                        </button>
+                    </a>
+                </div>
+                
+                <!-- Diet Plan 2 -->
+                <div class="text-center">
+                    <a href="meal/diet2.html" target="_blank">
+                        <button class="bg-[#ea3d5f] px-8 py-4 rounded-lg text-white font-semibold text-lg transition duration-300 ease-in-out hover:bg-[#c6286c] focus:outline-none focus:ring-2 focus:ring-[#ea3d5f]">
+                            Diet Plan with Excercise
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- meal plans day 1 ending -->
-
-
-     <!-- meal plans day 2 starting -->
-     <section class="py-10">
-        
-        <div class="2xl:container">
-        
-             <div class="w-[90%] mx-auto grid grid-cols-1">
-                <!-- <p class="text-slate-50 text-3xl font-['Poppins'] font-bold">EXPLORE TYPES OF MEALS</p> -->
-                <a href="#" target="_blank">
-            <button class="bg-[#ea3d5f] px-8 py-10 rounded-lg text-[#fff]">DIET PLAN DAY 2</button>
-                </a>
-             </div>
-    </div>
-    </section>
-     <!-- meal plans day 2 ending -->
-
-    
-
-    </body> 
+</body>
 </html>

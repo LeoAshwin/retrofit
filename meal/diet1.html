@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Day Diet Plan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://previews.123rf.com/images/mizar21984/mizar219841903/mizar21984190300016/121095827-background-diet-plan-with-fresh-vegetables-and-fruits-on-the-table-top-view.jpg");
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .day-plan {
+            margin-bottom: 20px;
+        }
+        .day-plan h2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+        .meals {
+            display: none;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .meals p {
+            margin: 5px 0;
+        }
+        .totals {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .toggle-icon {
+            float: right;
+            transition: transform 0.3s;
+        }
+        .toggle-icon.rotate {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>7-Day Diet Plan</h1>
+
+        <!-- Day 1 -->
+        <div class="day-plan">
+            <h2 onclick="toggleMeals(1)">Day 1 <span class="toggle-icon" id="icon-1">&#9654;</span></h2>
+            <div class="meals" id="meals-1">
+                <p><strong>Breakfast (387 calories):</strong> 2 servings Baked Banana-Nut Oatmeal Cups, 1 clementine</p>
+                <p><strong>A.M. Snack (190 calories):</strong> 1 medium apple, 1 Tbsp. peanut butter</p>
+                <p><strong>Lunch (325 calories):</strong> 1 serving Veggie & Hummus Sandwich</p>
+                <p><strong>P.M. Snack (105 calories):</strong> 1 medium banana</p>
+                <p><strong>Dinner (451 calories):</strong> 1 serving Sheet-Pan Chicken Fajita Bowls with 1/2 cup cooked brown rice</p>
+                <div class="totals">
+                    <p><strong>Daily Totals:</strong> 1,458 calories, 77 g protein, 220 g carbohydrate, 39 g fiber, 47 g fat, 1,355 mg sodium</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-plan">
+            <h2 onclick="toggleMeals(2)">Day 2 <span class="toggle-icon" id="icon-2">&#9654;</span></h2>
+            <div class="meals" id="meals-2">
+                <p><strong>Breakfast (387 calories):</strong> 2 servings Baked Banana-Nut Oatmeal Cups, 1 clementine</p>
+                <p><strong>A.M. Snack (192 calories):</strong> 1 oz. Cheddar cheese, 1 hard-boiled egg</p>
+                <p><strong>Lunch (344 calories):</strong> 1 serving Chipotle-Lime Cauliflower Taco Bowls</p>
+                <p><strong>P.M. Snack (95 calories):</strong> 1 medium apple</p>
+                <p><strong>Dinner (495 calories):</strong> 1 serving Zucchini-Chickpea Veggie Burgers with Tahini-Ranch Sauce, 1 serving Oven Baked Sweet Potato Fries</p>
+                <div class="totals">
+                    <p><strong>Daily Totals:</strong> 1,513 calories, 53 g protein, 203 g carbohydrate, 36 g fiber, 61 g fat, 1,976 mg sodium</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-plan">
+            <h2 onclick="toggleMeals(3)">Day 3 <span class="toggle-icon" id="icon-3">&#9654;</span></h2>
+            <div class="meals" id="meals-3">
+                <p><strong>Breakfast (387 calories):</strong> 2 servings Baked Banana-Nut Oatmeal Cups, 1 clementine</p>
+                <p><strong>A.M. Snack (95 calories):</strong> 1 medium apple</p>
+                <p><strong>Lunch (344 calories):</strong> 1 serving Chipotle-Lime Cauliflower Taco Bowls</p>
+                <p><strong>P.M. Snack (201 calories):</strong> 1 medium banana, 1 Tbsp. peanut butter</p>
+                <p><strong>Dinner (475 calories):</strong> 1 serving Easy Salmon Cakes over 2 cups baby spinach, 1 (2-inch) piece whole-wheat baguette</p>
+                <div class="totals">
+                    <p><strong>Daily Totals:</strong> 1,502 calories, 70 g protein, 212 g carbohydrate, 38 g fiber, 51 g fat, 1,851 mg sodium</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-plan">
+            <h2 onclick="toggleMeals(4)">Day 4 <span class="toggle-icon" id="icon-4">&#9654;</span></h2>
+            <div class="meals" id="meals-4">
+                <p><strong>Breakfast (393 calories):</strong> 1 serving Muesli with Raspberries, 1 medium banana</p>
+                <p><strong>A.M. Snack (78 calories):</strong> 1 hard-boiled egg sprinkled with a pinch each of salt and pepper</p>
+                <p><strong>Lunch (344 calories):</strong> 1 serving Chipotle-Lime Cauliflower Taco Bowls</p>
+                <p><strong>P.M. Snack (188 calories):</strong> 1/2 cup raspberries, 1 oz. dark chocolate</p>
+                <p><strong>Dinner (521 calories):</strong> 1 serving Chicken & Cucumber Lettuce Wraps with Peanut Sauce</p>
+                <div class="totals">
+                    <p><strong>Daily Totals:</strong> 1,523 calories, 70 g protein, 194 g carbohydrate, 46 g fiber, 61 g fat, 1,324 mg sodium</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-plan">
+            <h2 onclick="toggleMeals(5)">Day 5 <span class="toggle-icon" id="icon-5">&#9654;</span></h2>
+            <div class="meals" id="meals-5">
+                <p><strong>Breakfast (287 calories):</strong> 1 serving Muesli with Raspberries</p>
+                <p><strong>A.M. Snack (192 calories):</strong> 1 oz. Cheddar cheese, 1 hard-boiled egg</p>
+                <p><strong>Lunch (344 calories):</strong> 1 serving Chipotle-Lime Cauliflower Taco Bowls</p>
+                <p><strong>P.M. Snack (210 calories):</strong> 1 medium banana, 1 Tbsp. peanut butter</p>
+                <p><strong>Dinner (454 calories):</strong> 1 serving Spinach Ravioli with Artichokes & Olives</p>
+                <div class="totals">
+                    <p><strong>Daily Totals:</strong> 1,488 calories, 59 g protein, 191 g carbohydrate, 43 g fiber, 62 g fat, 1,624 mg sodium</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="day-plan">
+            <h2 onclick="toggleMeals(6)">Day 6 <span class="toggle-icon" id="icon-6">&#9654;</span></h2>
+            <div class="meals" id="meals-6">
+                <p><strong>Breakfast (393 calories):</strong> 1 serving Muesli with Raspberries, 1 medium banana</p>
+                <p><strong>A.M. Snack (200 calories):</strong> 1 medium apple, 1 Tbsp. peanut butter</p>
+                <p><strong>Lunch (360 calories):</strong> 1 serving Veggie & Hummus Sandwich, 1 clementine</p>
+                <p><strong>P.M. Snack (78 calories):</strong> 1 hard-boiled egg sprinkled with a pinch each salt and pepper</p>
+                <p><strong>Dinner (465 calories):</strong> 1 serving Curried Sweet Potato & Peanut Soup, 1 (2-inch) slice whole-wheat baguette</p>
+                <div class="totals">
+                    <p><strong>Daily Totals:</strong> 1,495 calories, 55 g protein, 220 g carbohydrate, 45 g fiber, 55 g fat, 1,616 mg sodium</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="day-plan">
+            <h2 onclick="toggleMeals(7)">Day 7 <span class="toggle-icon" id="icon-7">&#9654;</span></h2>
+            <div class="meals" id="meals-7">
+                <p><strong>Breakfast (285 calories):</strong> 1 serving "Egg in a Hole" Peppers with Avocado Salsa</p>
+                <p><strong>A.M. Snack (95 calories):</strong> 1 medium apple</p>
+                <p><strong>Lunch (345 calories):</strong> 1 serving Curried Sweet Potato & Peanut Soup</p>
+                <p><strong>P.M. Snack (220 calories):</strong> 1 cup raspberries, 1 oz. dark chocolate</p>
+                <p><strong>Dinner (556 calories):</strong> 1 1/2 serving Spinach & Artichoke Dip Pasta</p>
+                <div class="totals">
+                    <p><strong>Daily Totals:</strong> 1,501 calories, 56 g protein, 193 g carbohydrate, 41 g fiber, 63 g fat, 2,018 mg sodium</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMeals(day) {
+            const meals = document.getElementById('meals-' + day);
+            const icon = document.getElementById('icon-' + day);
+
+            if (meals.style.display === 'none' || meals.style.display === '') {
+                meals.style.display = 'block';
+                icon.classList.add('rotate');
+            } else {
+                meals.style.display = 'none';
+                icon.classList.remove('rotate');
+            }
+        }
+    </script>
+</body>
+</html>
