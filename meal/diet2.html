@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
             margin: 0;
             padding: 0;
             background-image: url("https://previews.123rf.com/images/mizar21984/mizar219841903/mizar21984190300016/121095827-background-diet-plan-with-fresh-vegetables-and-fruits-on-the-table-top-view.jpg");
+            background-size: cover;
         }
         .container {
             width: 80%;
@@ -19,10 +21,10 @@
         }
         h1 {
             text-align: center;
-            color: #333;
+            color:red;
         }
         .day {
-            background: #fff;
+            background:yellowgreen;
             margin-bottom: 20px;
             padding: 20px;
             border-radius: 8px;
@@ -31,6 +33,17 @@
         .day h2 {
             margin-top: 0;
             color: #007BFF;
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+        }
+        .day input[type="checkbox"] {
+            display: none;
+        }
+        .day input[type="checkbox"]:checked ~ .content {
+            display: block;
         }
         .meals {
             margin-bottom: 10px;
@@ -49,17 +62,13 @@
             border-radius: 4px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
-        .why-this-works {
-            margin-top: 20px;
-        }
-        .exercise-plan {
+        .why-this-works,
+        .exercise-plan,
+        .how-you-will-feel {
             margin-top: 20px;
         }
         .exercise-plan h3 {
             color: #28A745;
-        }
-        .how-you-will-feel {
-            margin-top: 20px;
         }
         .tip {
             background: #e9ecef;
@@ -75,377 +84,434 @@
 
         <!-- Day 1 -->
         <div class="day">
-            <h2>Day 1 (1500 Calories)</h2>
-            <div class="meals">
-                <h3>Early Morning (6:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup warm water with juice of half a lime and honey</li>
-                </ul>
-                <h3>Breakfast (7:00 a.m.)</h3>
-                <ul>
-                    <li>3 millet idlis + 1 small bowl sambar or 2 egg whites + ½ a small bowl of peanut and coconut chutney + 1 cup green tea</li>
-                </ul>
-                <h3>Mid Morning (10:00 a.m.)</h3>
-                <ul>
-                    <li>1 medium apple or a small bowl of grapes</li>
-                </ul>
-                <h3>Lunch (12:30-1:00 p.m.)</h3>
-                <ul>
-                    <li>2 ragi balls + Vegetable curry + 1 cup rasam + 1 cup buttermilk</li>
-                </ul>
-                <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup green tea + 2 Marie biscuits</li>
-                </ul>
-                <h3>Dinner (7:00 p.m.)</h3>
-                <ul>
-                    <li>2 rotis + 1 medium bowl of vegetable curry + 1 cup spinach daal + 1 small bowl of curd</li>
-                </ul>
-                <h3>Bed Time (10:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup warm milk with a pinch of turmeric</li>
-                </ul>
-            </div>
-            <div class="why-this-works">
-                <p><strong>Why This Works:</strong> This 1500-calorie diet for Day 1 helps boost your energy and lose weight. Warm water with lime and honey kick starts your metabolism, maintains the internal pH, and boosts your immunity. Millet idlis are super healthy, and peanut and coconut chutney will provide your body with healthy fats and protein. Choose sambar or egg whites as a source of lean protein, which will keep you active throughout the day. Green tea helps flush toxins out and keeps your hunger pangs at bay. Apples or grapes are good sources of vitamins and minerals. Ragi balls provide energy, calcium, and fiber. Have any vegetable curry and a cup of rasam to support your body functions. Buttermilk and curd strengthen the digestive system and immunity. Marie biscuits, though not healthy, will help you relax with a cup of green tea. Avoid having white or brown rice for dinner, and consume no more than two rotis. You can have one extra cup of daal if you feel hungry. Drinking warm milk with turmeric will prevent you from snacking on junk and help you sleep better.</p>
-            </div>
-            <div class="exercise-plan">
-                <h3>Day 1 Exercise Plan</h3>
-                <ul>
-                    <li>Warm-up – 10 mins</li>
-                    <li>Rope jumping – 3 sets of 50 reps</li>
-                    <li>Crunches – 2 sets of 15 reps</li>
-                    <li>Bicycle crunches – 2 sets of 15 reps</li>
-                    <li>Leg-up crunches – 2 sets of 15 reps</li>
-                    <li>Sit-ups – 2 sets of 15 reps</li>
-                    <li>Russian twist – 2 sets of 25 reps</li>
-                    <li>Flutter kicks – 2 sets of 30 reps</li>
-                    <li>Scissor legs – 2 sets of 15 reps</li>
-                    <li>Leg raises – 2 sets of 15 reps</li>
-                    <li>Brisk walk – 10 minutes</li>
-                    <li>Cool off by doing some stretching exercises</li>
-                </ul>
-            </div>
-            <div class="how-you-will-feel">
-                <p><strong>How You Will Feel By The End Of Day 1:</strong> By the end of Day 1, you will feel refreshed and active. Adhering to the diet plan will not be a problem as you will be consuming healthier versions of familiar foods in adequate amounts. If you exercise after a long time, you will experience body pain, and that is why you need to warm up and cool off properly before and after exercising. Make sure you don’t overdo the exercises. Check with your doctor to know if you are allowed to do vigorous cardio or weight training before you start exercising.</p>
+            <input type="checkbox" id="toggleDay1">
+            <label for="toggleDay1">
+                <h2>Day 1 (1500 Calories)</h2>
+            </label>
+            <div class="content">
+                <div class="meals">
+                    <h3>Early Morning (6:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup warm water with juice of half a lime and honey</li>
+                    </ul>
+                    <h3>Breakfast (7:00 a.m.)</h3>
+                    <ul>
+                        <li>3 millet idlis + 1 small bowl sambar or 2 egg whites + ½ a small bowl of peanut and coconut chutney + 1 cup green tea</li>
+                    </ul>
+                    <h3>Mid Morning (10:00 a.m.)</h3>
+                    <ul>
+                        <li>1 medium apple or a small bowl of grapes</li>
+                    </ul>
+                    <h3>Lunch (12:30-1:00 p.m.)</h3>
+                    <ul>
+                        <li>2 ragi balls + Vegetable curry + 1 cup rasam + 1 cup buttermilk</li>
+                    </ul>
+                    <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup green tea + 2 Marie biscuits</li>
+                    </ul>
+                    <h3>Dinner (7:00 p.m.)</h3>
+                    <ul>
+                        <li>2 rotis + 1 medium bowl of vegetable curry + 1 cup spinach daal + 1 small bowl of curd</li>
+                    </ul>
+                    <h3>Bed Time (10:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup warm milk with a pinch of turmeric</li>
+                    </ul>
+                </div>
+                <div class="why-this-works">
+                    <p><strong>Why This Works:</strong> This 1500-calorie diet for Day 1 helps boost your energy and lose weight. Warm water with lime and honey kick starts your metabolism, maintains the internal pH, and boosts your immunity. Millet idlis are super healthy, and peanut and coconut chutney will provide your body with healthy fats and protein. Choose sambar or egg whites as a source of lean protein, which will keep you active throughout the day. Green tea helps flush toxins out and keeps your hunger pangs at bay. Apples or grapes are good sources of vitamins and minerals. Ragi balls provide energy, calcium, and fiber. Have any vegetable curry and a cup of rasam to support your body functions. Buttermilk and curd strengthen the digestive system and immunity. Marie biscuits, though not healthy, will help you relax with a cup of green tea. Avoid having white or brown rice for dinner, and consume no more than two rotis. You can have one extra cup of daal if you feel hungry. Drinking warm milk with turmeric will prevent you from snacking on junk and help you sleep better.</p>
+                </div>
+                <div class="exercise-plan">
+                    <h3>Day 1 Exercise Plan</h3>
+                    <ul>
+                        <li>Warm-up – 10 mins</li>
+                        <li>Rope jumping – 3 sets of 50 reps</li>
+                        <li>Crunches – 2 sets of 15 reps</li>
+                        <li>Bicycle crunches – 2 sets of 15 reps</li>
+                        <li>Leg-up crunches – 2 sets of 15 reps</li>
+                        <li>Sit-ups – 2 sets of 15 reps</li>
+                        <li>Russian twist – 2 sets of 25 reps</li>
+                        <li>Flutter kicks – 2 sets of 30 reps</li>
+                        <li>Scissor legs – 2 sets of 15 reps</li>
+                        <li>Leg raises – 2 sets of 15 reps</li>
+                        <li>Brisk walk – 10 minutes</li>
+                        <li>Cool off by doing some stretching exercises</li>
+                    </ul>
+                </div>
+                <div class="how-you-will-feel">
+                    <p><strong>How You Will Feel By The End Of Day 1:</strong> By the end of Day 1, you will feel refreshed and active. Adhering to the diet plan will not be a problem as you will be consuming healthier versions of familiar foods in adequate amounts. If you exercise after a long time, you will experience body pain, and that is why you need to warm up and cool off properly before and after exercising. Make sure you don’t overdo the exercises. Check with your doctor to know if you are allowed to do vigorous cardio or weight training before you start exercising.</p>
+                </div>
             </div>
         </div>
 
         <!-- Day 2 -->
         <div class="day">
-            <h2>Day 2 (1400 Calories)</h2>
-            <div class="meals">
-                <h3>Early Morning (6:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup warm water with juice of half a lime and honey</li>
-                </ul>
-                <h3>Breakfast (7:00 a.m.)</h3>
-                <ul>
-                    <li>2 medium rava dosas + tomato and onion chutney + 1 cup black coffee + 4 almonds</li>
-                </ul>
-                <h3>Mid Morning (10:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup cut fruits</li>
-                </ul>
-                <h3>Lunch (12:30-1:00 p.m.)</h3>
-                <ul>
-                    <li>1 small bowl brown rice (or) 2 rotis + 1 cup bendekai gojju + 1 cup sambar + cucumber and carrot salad + 1 cup buttermilk</li>
-                </ul>
-                <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup black coffee + 1 boiled egg (or) boiled peanuts (20 g)</li>
-                </ul>
-                <h3>Dinner (7:00 p.m.)</h3>
-                <ul>
-                    <li>2 rotis + 1 cup mixed daal + 1 medium bowl vegetable kadalai curry or chicken curry + cucumber, onion, and tomato salad + 1 small cup low-fat curd</li>
-                </ul>
-                <h3>Bed Time (10:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup warm milk with a pinch of turmeric</li>
-                </ul>
-            </div>
-            <div class="why-this-works">
-                <p><strong>Why This Works:</strong> Honey detoxifies your system and boosts your immunity. Rava dosa is crispy and healthy. Use olive oil or clarified butter to make the dosa. Almonds are loaded with vitamin E. Black coffee will improve your metabolism, and a cup of cut fruits will fulfill your hunger and provide energy. Brown rice is a healthy alternative to white rice and is high in fiber. Bendekai gojju (okra) is rich in vitamins and minerals. Include cucumber and carrot salad to stay hydrated and keep the digestive system healthy. Boiled peanuts are rich in proteins, while eggs are rich in vitamins. Having mixed daal or chicken curry will keep you full and boost your metabolism. Curd will aid digestion.</p>
-            </div>
-            <div class="exercise-plan">
-                <h3>Day 2 Exercise Plan</h3>
-                <ul>
-                    <li>Warm-up – 10 mins</li>
-                    <li>Jumping jacks – 3 sets of 30 reps</li>
-                    <li>Burpees – 3 sets of 10 reps</li>
-                    <li>Push-ups – 2 sets of 10 reps</li>
-                    <li>Mountain climbers – 3 sets of 15 reps</li>
-                    <li>High knees – 2 sets of 30 reps</li>
-                    <li>Squats – 3 sets of 15 reps</li>
-                    <li>Lunges – 2 sets of 15 reps (each leg)</li>
-                    <li>Cool off with stretching exercises</li>
-                </ul>
-            </div>
-            <div class="how-you-will-feel">
-                <p><strong>How You Will Feel By The End Of Day 2:</strong> Day 2 will be a bit more challenging, especially if you’re not used to doing exercises. You will feel lighter and more energetic, but if you overdo it, you may feel tired. You will need to stay hydrated and keep your meals balanced. Focus on staying consistent with both your diet and exercise to see better results.</p>
+            <input type="checkbox" id="toggleDay2">
+            <label for="toggleDay2">
+                <h2>Day 2 (1400 Calories)</h2>
+            </label>
+            <div class="content">
+                <div class="meals">
+                    <h3>Early Morning (6:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup warm water with juice of half a lime and honey</li>
+                    </ul>
+                    <h3>Breakfast (7:00 a.m.)</h3>
+                    <ul>
+                        <li>2 medium rava dosas + tomato and onion chutney + 1 cup black coffee + 4 almonds</li>
+                    </ul>
+                    <h3>Mid Morning (10:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup cut fruits</li>
+                    </ul>
+                    <h3>Lunch (12:30-1:00 p.m.)</h3>
+                    <ul>
+                        <li>1 small bowl brown rice (or) 2 rotis + 1 cup bendekai gojju + 1 cup sambar + cucumber and carrot salad + 1 cup buttermilk</li>
+                    </ul>
+                    <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup black coffee + 1 boiled egg (or) boiled peanuts (20 g)</li>
+                    </ul>
+                    <h3>Dinner (7:00 p.m.)</h3>
+                    <ul>
+                        <li
+
+>1 cup cabbage curry + 1 bowl moong dal + 2 rotis + 1 small bowl curd</li>
+                    </ul>
+                    <h3>Bed Time (10:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup warm milk with a pinch of turmeric</li>
+                    </ul>
+                </div>
+                <div class="why-this-works">
+                    <p><strong>Why This Works:</strong> This 1400-calorie diet for Day 2 is designed to enhance metabolism and support weight loss. Starting with warm water and lime with honey improves digestion and cleanses your system. Rava dosas are light but filling, and almonds provide essential nutrients. Fresh fruits offer vitamins and hydration. Brown rice or rotis with vegetable curry, sambar, and salad make for a nutritious lunch. Black coffee and boiled eggs or peanuts act as protein boosters while keeping calorie count low. For dinner, cabbage curry, moong dal, rotis, and curd provide a balanced end to your day, with turmeric milk helping to relax and promote good sleep.</p>
+                </div>
+                <div class="exercise-plan">
+                    <h3>Day 2 Exercise Plan</h3>
+                    <ul>
+                        <li>Warm-up – 10 mins</li>
+                        <li>Jogging – 20 minutes</li>
+                        <li>Jumping jacks – 3 sets of 30 reps</li>
+                        <li>Push-ups – 2 sets of 10 reps</li>
+                        <li>Plank – 2 sets of 30 seconds</li>
+                        <li>Squats – 3 sets of 15 reps</li>
+                        <li>Lunges – 2 sets of 12 reps each leg</li>
+                        <li>Brisk walk – 10 minutes</li>
+                        <li>Cool off by doing some stretching exercises</li>
+                    </ul>
+                </div>
+                <div class="how-you-will-feel">
+                    <p><strong>How You Will Feel By The End Of Day 2:</strong> By the end of Day 2, you will notice increased energy and a sense of well-being. The diet keeps you full and satisfied while the exercise boosts your endurance and strength. Your body might be a bit sore from the workout, but this will improve with consistent exercise. Ensure to hydrate well and listen to your body to avoid overexertion.</p>
+                </div>
             </div>
         </div>
 
         <!-- Day 3 -->
         <div class="day">
-            <h2>Day 3 (1600 Calories)</h2>
-            <div class="meals">
-                <h3>Early Morning (6:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup warm water with juice of half a lime and honey</li>
-                </ul>
-                <h3>Breakfast (7:00 a.m.)</h3>
-                <ul>
-                    <li>1 bowl of upma + 1 small bowl of coconut chutney + 1 cup green tea</li>
-                </ul>
-                <h3>Mid Morning (10:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup papaya or a small bowl of mixed fruit</li>
-                </ul>
-                <h3>Lunch (12:30-1:00 p.m.)</h3>
-                <ul>
-                    <li>2 small bowls of vegetable curry + 1 cup brown rice + 1 cup sambar + 1 cup buttermilk</li>
-                </ul>
-                <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup black coffee + 1 small bowl of roasted chana</li>
-                </ul>
-                <h3>Dinner (7:00 p.m.)</h3>
-                <ul>
-                    <li>1 bowl of mixed vegetable soup + 1 medium bowl of vegetable salad + 1 small bowl of paneer or tofu curry</li>
-                </ul>
-                <h3>Bed Time (10:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup warm milk with a pinch of turmeric</li>
-                </ul>
-            </div>
-            <div class="why-this-works">
-                <p><strong>Why This Works:</strong> Lime and honey are great for detoxification. Upma is a wholesome meal that provides carbohydrates and fiber. Coconut chutney provides healthy fats. Papaya is rich in vitamins and aids digestion. Vegetable curry and brown rice provide fiber and essential nutrients. Roasted chana is high in protein. Vegetable soup and salad are low in calories and high in nutrients, while paneer or tofu provide protein.</p>
-            </div>
-            <div class="exercise-plan">
-                <h3>Day 3 Exercise Plan</h3>
-                <ul>
-                    <li>Warm-up – 10 mins</li>
-                    <li>Jogging or brisk walk – 20 mins</li>
-                    <li>Push-ups – 3 sets of 15 reps</li>
-                    <li>Squats – 3 sets of 20 reps</li>
-                    <li>Planks – 2 sets of 1 minute</li>
-                    <li>Burpees – 3 sets of 12 reps</li>
-                    <li>Cool off with stretching exercises</li>
-                </ul>
-            </div>
-            <div class="how-you-will-feel">
-                <p><strong>How You Will Feel By The End Of Day 3:</strong> By Day 3, you will feel your energy levels rising and your body getting accustomed to the exercise routine. You may feel hungrier, but the balanced meals and exercise will help maintain your weight loss goals. Ensure you stay hydrated and keep up with the exercise routine.</p>
+            <input type="checkbox" id="toggleDay3">
+            <label for="toggleDay3">
+                <h2>Day 3 (1600 Calories)</h2>
+            </label>
+            <div class="content">
+                <div class="meals">
+                    <h3>Early Morning (6:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup warm water with lemon</li>
+                    </ul>
+                    <h3>Breakfast (7:00 a.m.)</h3>
+                    <ul>
+                        <li>1 bowl poha with vegetables + 1 cup herbal tea</li>
+                    </ul>
+                    <h3>Mid Morning (10:00 a.m.)</h3>
+                    <ul>
+                        <li>1 small bowl of papaya</li>
+                    </ul>
+                    <h3>Lunch (12:30-1:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup brown rice + 1 cup mixed vegetable curry + 1 cup dal + salad</li>
+                    </ul>
+                    <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup green tea + 1 handful of walnuts</li>
+                    </ul>
+                    <h3>Dinner (7:00 p.m.)</h3>
+                    <ul>
+                        <li>2 chapatis + 1 cup vegetable soup + 1 cup curd</li>
+                    </ul>
+                    <h3>Bed Time (10:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup warm milk with a pinch of saffron</li>
+                    </ul>
+                </div>
+                <div class="why-this-works">
+                    <p><strong>Why This Works:</strong> Day 3’s plan maintains a balance between carbohydrates, proteins, and fats. Starting with warm water with lemon aids digestion. Poha with vegetables is a light yet nutritious breakfast. Papaya helps with digestion and is rich in vitamins. Brown rice, vegetable curry, and dal provide a balanced lunch with enough fiber and protein. Green tea and walnuts are healthy snacks that keep you full and energized. Chapatis with vegetable soup and curd make a satisfying dinner. Saffron milk at bedtime is soothing and aids in better sleep.</p>
+                </div>
+                <div class="exercise-plan">
+                    <h3>Day 3 Exercise Plan</h3>
+                    <ul>
+                        <li>Warm-up – 10 mins</li>
+                        <li>Running – 15 minutes</li>
+                        <li>Burpees – 3 sets of 10 reps</li>
+                        <li>Mountain climbers – 2 sets of 20 reps</li>
+                        <li>Tricep dips – 2 sets of 15 reps</li>
+                        <li>Leg raises – 2 sets of 15 reps</li>
+                        <li>Crunches – 3 sets of 20 reps</li>
+                        <li>Brisk walk – 10 minutes</li>
+                        <li>Cool off by doing some stretching exercises</li>
+                    </ul>
+                </div>
+                <div class="how-you-will-feel">
+                    <p><strong>How You Will Feel By The End Of Day 3:</strong> By the end of Day 3, you will feel more energetic and your body will start adjusting to the new diet and exercise routine. The diet provides a good mix of nutrients and the exercises help in burning calories effectively. You might experience some muscle soreness, but this is a sign of progress. Continue to stay hydrated and maintain consistency for the best results.</p>
+                </div>
             </div>
         </div>
 
         <!-- Day 4 -->
         <div class="day">
-            <h2>Day 4 (1500 Calories)</h2>
-            <div class="meals">
-                <h3>Early Morning (6:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup warm water with juice of half a lime and honey</li>
-                </ul>
-                <h3>Breakfast (7:00 a.m.)</h3>
-                <ul>
-                    <li>2 small ragi idlis + 1 cup sambar + 1 small bowl coconut chutney</li>
-                </ul>
-                <h3>Mid Morning (10:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup cucumber and carrot sticks</li>
-                </ul>
-                <h3>Lunch (12:30-1:00 p.m.)</h3>
-                <ul>
-                    <li>2 small chapatis + 1 cup vegetable curry + 1 small bowl of dal + 1 cup buttermilk</li>
-                </ul>
-                <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup green tea + 1 small handful of almonds</li>
-                </ul>
-                <h3>Dinner (7:00 p.m.)</h3>
-                <ul>
-                    <li>1 bowl of vegetable soup + 1 small bowl of mixed vegetable salad + 1 small bowl of paneer or tofu curry</li>
-                </ul>
-                <h3>Bed Time (10:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup warm milk with a pinch of turmeric</li>
-                </ul>
-            </div>
-            <div class="why-this-works">
-                <p><strong>Why This Works:</strong> The meal plan includes nutrient-rich foods that support your weight loss goals. Lime and honey detoxify the body, while ragi idlis provide energy and fiber. Coconut chutney adds healthy fats. Cucumber and carrot sticks are low-calorie snacks. Chapatis, vegetable curry, and dal offer a balanced meal with proteins and carbohydrates. Almonds provide healthy fats and proteins. Paneer or tofu adds protein to your diet, while the soup and salad keep the calorie count low.</p>
-            </div>
-            <div class="exercise-plan">
-                <h3>Day 4 Exercise Plan</h3>
-                <ul>
-                    <li>Warm-up – 10 mins</li>
-                    <li>Jumping jacks – 3 sets of 40 reps</li>
-                    <li>High knees – 3 sets of 30 reps</li>
-                    <li>Burpees – 3 sets of 15 reps</li>
-                    <li>Mountain climbers – 3 sets of 20 reps</li>
-                    <li>Cool off with stretching exercises</li>
-                </ul>
-            </div>
-            <div class="how-you-will-feel">
-                <p><strong>How You Will Feel By The End Of Day 4:</strong> You will start to see visible changes in your body, such as reduced bloating and improved energy levels. Stick to the plan and keep hydrated. Consistency with both diet and exercise is key to achieving your weight loss goals.</p>
+            <input type="checkbox" id="toggleDay4">
+            <label for="toggleDay4">
+                <h2>Day 4 (1500 Calories)</h2>
+            </label>
+            <div class="content">
+                <div class="meals">
+                    <h3>Early Morning (6:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup warm water with lemon and honey</li>
+                    </ul>
+                    <h3>Breakfast (7:00 a.m.)</h3>
+                    <ul>
+                        <li>2 small dosas with coconut chutney + 1 cup green tea</li>
+                    </ul>
+                    <h3>Mid Morning (10:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup mixed berries</li>
+                    </ul>
+                    <h3>Lunch (12:30-1:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup quinoa + 1 cup vegetable curry + 1 cup dal + salad</li>
+                    </ul>
+                    <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup herbal tea + 1 small handful of almonds</li>
+                    </ul>
+                    <h3>Dinner (7:00 p.m.)</h3>
+                    <ul>
+                        <li>2 chapatis + 1 cup vegetable stew + 1 small bowl of curd</li>
+                    </ul>
+                    <h3>Bed Time (10:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup warm milk with a pinch of turmeric</li>
+                    </ul>
+                </div>
+                <div class="why-this-works">
+                    <p><strong>Why This Works:</strong> Day 4’s plan continues to offer a balanced diet while keeping calories in check. Warm water with lemon and honey helps kick-start your metabolism. Small dosas with coconut chutney provide energy without excess calories. Mixed berries are low in calories and high in antioxidants. Quinoa is a great source of protein and fiber, complementing the vegetable curry and dal. Almonds and herbal tea make a nutritious snack, and the vegetable stew with chapatis is a satisfying dinner option. Turmeric milk at bedtime helps with digestion and relaxation.</p>
+                </div>
+                <div class="exercise-plan">
+                    <h3>Day 4 Exercise Plan</h3>
+                    <ul>
+                        <li>Warm-up – 10 mins</li>
+                        <li>Cycling – 20 minutes</li>
+                        <li>High knees – 3 sets of 30 seconds</li>
+                        <li>Push-ups – 3 sets of 15 reps</li>
+                        <li>Squat jumps – 2 sets of 15 reps</li>
+                        <li>Plank – 2 sets of 40 seconds</li>
+                        <li>Russian twists – 2 sets of 25 reps</li>
+                        <li>Brisk walk – 10 minutes</li>
+                        <li>Cool off by doing some stretching exercises</li>
+                    </ul>
+                </div>
+                <div class="how
+
+-you-will-feel">
+                    <p><strong>How You Will Feel By The End Of Day 4:</strong> By the end of Day 4, you should feel a notable increase in your overall energy levels and a reduction in hunger cravings. The diet continues to support weight loss while providing essential nutrients. Your body will begin to adapt to the exercise routine, and you’ll likely notice improvements in strength and endurance. Ensure proper hydration and get enough rest to support your weight loss journey.</p>
+                </div>
             </div>
         </div>
 
         <!-- Day 5 -->
         <div class="day">
-            <h2>Day 5 (1500 Calories)</h2>
-            <div class="meals">
-                <h3>Early Morning (6:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup warm water with juice of half a lime and honey</li>
-                </ul>
-                <h3>Breakfast (7:00 a.m.)</h3>
-                <ul>
-                    <li>1 small bowl of vegetable upma + 1 cup green tea</li>
-                </ul>
-                <h3>Mid Morning (10:00 a.m.)</h3>
-                <ul>
-                    <li>1 medium orange or a small bowl of strawberries</li>
-                </ul>
-                <h3>Lunch (12:30-1:00 p.m.)</h3>
-                <ul>
-                    <li>1 small bowl brown rice + 1 cup sambar + 1 cup mixed vegetable curry + 1 cup buttermilk</li>
-                </ul>
-                <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup green tea + 1 small handful of walnuts</li>
-                </ul>
-                <h3>Dinner (7:00 p.m.)</h3>
-                <ul>
-                    <li>1 small bowl of vegetable soup + 1 small bowl of mixed salad + 1 small bowl of grilled chicken or tofu</li>
-                </ul>
-                <h3>Bed Time (10:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup warm milk with a pinch of turmeric</li>
-                </ul>
-            </div>
-            <div class="why-this-works">
-                <p><strong>Why This Works:</strong> Lime and honey kick-start your metabolism. Vegetable upma is a light, healthy breakfast option. Fruits provide essential vitamins. Brown rice and sambar offer a filling and nutritious lunch. Walnuts provide healthy fats and proteins. Vegetable soup and salad keep your calorie count low while providing essential nutrients. Grilled chicken or tofu adds a good source of protein.</p>
-            </div>
-            <div class="exercise-plan">
-                <h3>Day 5 Exercise Plan</h3>
-                <ul>
-                    <li>Warm-up – 10 mins</li>
-                    <li>Jogging – 20 mins</li>
-                    <li>Push-ups – 3 sets of 15 reps</li>
-                    <li>Squats – 3 sets of 20 reps</li>
-                    <li>Plank – 2 sets of 1 minute</li>
-                    <li>Cool off with stretching exercises</li>
-                </ul>
-            </div>
-            <div class="how-you-will-feel">
-                <p><strong>How You Will Feel By The End Of Day 5:</strong> You will likely feel more energetic and see further progress in your weight loss journey. Continue to follow the diet and exercise plan diligently to maintain and further improve your results.</p>
+            <input type="checkbox" id="toggleDay5">
+            <label for="toggleDay5">
+                <h2>Day 5 (1700 Calories)</h2>
+            </label>
+            <div class="content">
+                <div class="meals">
+                    <h3>Early Morning (6:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup warm water with lemon and honey</li>
+                    </ul>
+                    <h3>Breakfast (7:00 a.m.)</h3>
+                    <ul>
+                        <li>1 bowl upma with vegetables + 1 cup green tea</li>
+                    </ul>
+                    <h3>Mid Morning (10:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup pomegranate seeds</li>
+                    </ul>
+                    <h3>Lunch (12:30-1:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup brown rice + 1 cup mixed vegetable curry + 1 cup curd + salad</li>
+                    </ul>
+                    <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup green tea + 1 handful of walnuts</li>
+                    </ul>
+                    <h3>Dinner (7:00 p.m.)</h3>
+                    <ul>
+                        <li>2 chapatis + 1 cup vegetable curry + 1 small bowl of curd</li>
+                    </ul>
+                    <h3>Bed Time (10:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup warm milk with a pinch of saffron</li>
+                    </ul>
+                </div>
+                <div class="why-this-works">
+                    <p><strong>Why This Works:</strong> Day 5 maintains the balance between calorie intake and nutritional value. Warm water with lemon and honey aids digestion. Upma with vegetables provides a hearty breakfast that keeps you full longer. Pomegranate seeds are rich in antioxidants. Brown rice with vegetable curry and curd offers a filling lunch. Walnuts and green tea are perfect for a healthy snack. Chapatis with vegetable curry and curd make a satisfying dinner. Saffron milk before bed adds a touch of relaxation and promotes good sleep.</p>
+                </div>
+                <div class="exercise-plan">
+                    <h3>Day 5 Exercise Plan</h3>
+                    <ul>
+                        <li>Warm-up – 10 mins</li>
+                        <li>Jogging – 20 minutes</li>
+                        <li>Burpees – 3 sets of 15 reps</li>
+                        <li>Mountain climbers – 2 sets of 25 reps</li>
+                        <li>Tricep dips – 2 sets of 20 reps</li>
+                        <li>Leg raises – 2 sets of 20 reps</li>
+                        <li>Crunches – 3 sets of 25 reps</li>
+                        <li>Brisk walk – 10 minutes</li>
+                        <li>Cool off by doing some stretching exercises</li>
+                    </ul>
+                </div>
+                <div class="how-you-will-feel">
+                    <p><strong>How You Will Feel By The End Of Day 5:</strong> By the end of Day 5, you should feel more toned and have increased stamina. The diet is well-balanced to support your workouts and maintain energy levels. As your body adapts to the exercises, you’ll notice improvements in muscle tone and endurance. Keep up with the routine and stay hydrated to maximize results.</p>
+                </div>
             </div>
         </div>
 
         <!-- Day 6 -->
         <div class="day">
-            <h2>Day 6 (1600 Calories)</h2>
-            <div class="meals">
-                <h3>Early Morning (6:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup warm water with juice of half a lime and honey</li>
-                </ul>
-                <h3>Breakfast (7:00 a.m.)</h3>
-                <ul>
-                    <li>1 small bowl of ragi porridge + 1 cup green tea</li>
-                </ul>
-                <h3>Mid Morning (10:00 a.m.)</h3>
-                <ul>
-                    <li>1 small bowl of fresh berries</li>
-                </ul>
-                <h3>Lunch (12:30-1:00 p.m.)</h3>
-                <ul>
-                    <li>1 small bowl of quinoa + 1 cup vegetable curry + 1 cup curd + 1 cup cucumber salad</li>
-                </ul>
-                <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup black coffee + 1 small handful of cashews</li>
-                </ul>
-                <h3>Dinner (7:00 p.m.)</h3>
-                <ul>
-                    <li>1 small bowl of vegetable soup + 1 small bowl of mixed vegetable salad + 1 small bowl of grilled fish or tofu</li>
-                </ul>
-                <h3>Bed Time (10:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup warm milk with a pinch of turmeric</li>
-                </ul>
-            </div>
-            <div class="why-this-works">
-                <p><strong>Why This Works:</strong> Lime and honey boost your metabolism. Ragi porridge provides fiber and essential nutrients. Fresh berries are high in antioxidants. Quinoa is a high-protein grain, while vegetable curry and cucumber salad are low-calorie options. Cashews provide healthy fats and protein. Grilled fish or tofu offer a lean source of protein.</p>
-            </div>
-            <div class="exercise-plan">
-                <h3>Day 6 Exercise Plan</h3>
-                <ul>
-                    <li>Warm-up – 10 mins</li>
-                    <li>High-intensity interval training (HIIT) – 20 mins</li>
-                    <li>Push-ups – 3 sets of 20 reps</li>
-                    <li>Squats – 3 sets of 25 reps</li>
-                    <li>Planks – 2 sets of 1 minute</li>
-                    <li>Cool off with stretching exercises</li>
-                </ul>
-            </div>
-            <div class="how-you-will-feel">
-                <p><strong>How You Will Feel By The End Of Day 6:</strong> You will feel stronger and more resilient. Continue with the diet and exercise to see steady progress. Listen to your body and ensure you are not over-exerting yourself.</p>
+            <input type="checkbox" id="toggleDay6">
+            <label for="toggleDay6">
+                <h2>Day 6 (1600 Calories)</h2>
+            </label>
+            <div class="content">
+                <div class="meals">
+                    <h3>Early Morning (6:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup warm water with lemon and honey</li>
+                    </ul>
+                    <h3>Breakfast (7:00 a.m.)</h3>
+                    <ul>
+                        <li>1 bowl of vegetable oats + 1 cup green tea</li>
+                    </ul>
+                    <h3>Mid Morning (10:00 a.m.)</h3>
+                    <ul>
+                        <li>1 small bowl of apple slices</li>
+                    </ul>
+                    <h3>Lunch (12:30-1:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup brown rice + 1 cup vegetable curry + 1 cup curd + salad</li>
+                    </ul>
+                    <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup green tea + 1 handful of sunflower seeds</li>
+                    </ul>
+                    <h3>Dinner (7:00 p.m.)</h3>
+                    <ul>
+                        <li>2 chapatis + 1 cup mixed vegetable stew + 1 small bowl of curd</li>
+                    </ul>
+                    <h3>Bed Time (10:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup warm milk with a pinch of turmeric</li>
+                    </ul>
+                </div>
+                <div class="why-this-works">
+                    <p><strong>Why This Works:</strong> Day 6 continues to support weight loss with a balanced diet. Warm water with lemon and honey helps with digestion. Vegetable oats are a filling breakfast that provides fiber. Apple slices are a healthy snack option. Brown rice with vegetable curry and curd makes a nutritious lunch. Green tea with sunflower seeds provides a healthy snack. Chapatis with vegetable stew and curd offer a satisfying dinner, and turmeric milk before bed supports digestion and sleep quality.</p>
+                </div>
+                <div class="exercise-plan">
+                    <h3>Day 6 Exercise Plan</h3>
+                    <ul>
+                        <li>Warm-up – 10 mins</li>
+                        <li>Running – 20 minutes</li>
+                        <li>High knees – 3 sets of 45 seconds</li>
+                        <li>Push-ups – 3 sets of 20 reps</li>
+                        <li>Squat jumps – 3 sets of 20 reps</li>
+                        <li>Plank – 3 sets of 50 seconds</li>
+                        <li>Russian twists – 3 sets of 30 reps</li>
+                        <li>Brisk walk – 10 minutes</li>
+                        <li>Cool off by doing some stretching exercises</li>
+                    </ul>
+                </div>
+                <div class="how-you-will-feel">
+                    <p><strong>How You Will Feel By The End Of Day 6:</strong> By the end of Day 6, you’ll notice significant improvements in your overall fitness and well-being. The consistent diet and exercise routine will help in achieving your weight loss goals while enhancing your energy levels. Your body will feel more toned and stronger, and you’ll experience better sleep and digestion. Continue with this balanced approach to maintain your progress.</p>
+                </div>
             </div>
         </div>
 
         <!-- Day 7 -->
         <div class="day">
-            <h2>Day 7 (1500 Calories)</h2>
-            <div class="meals">
-                <h3>Early Morning (6:00 a.m.)</h3>
-                <ul>
-                    <li>1 cup warm water with juice of half a lime and honey</li>
-                </ul>
-                <h3>Breakfast (7:00 a.m.)</h3>
-                <ul>
-                    <li>1 bowl of vegetable poha + 1 cup green tea</li>
-                </ul>
-                <h3>Mid Morning (10:00 a.m.)</h3>
-                <ul>
-                    <li>1 small apple or a small bowl of pomegranate</li>
-                </ul>
-                <h3>Lunch (12:30-1:00 p.m.)</h3>
-                <ul>
-                    <li>1 small bowl of whole wheat pasta + 1 cup vegetable soup + 1 small bowl of mixed salad</li>
-                </ul>
-                <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup green tea + 1 small handful of sunflower seeds</li>
-                </ul>
-                <h3>Dinner (7:00 p.m.)</h3>
-                <ul>
-                    <li>1 small bowl of vegetable soup + 1 small bowl of mixed salad + 1 small bowl of tofu stir-fry</li>
-                </ul>
-                <h3>Bed Time (10:00 p.m.)</h3>
-                <ul>
-                    <li>1 cup warm milk with a pinch of turmeric</li>
-                </ul>
-            </div>
-            <div class="why-this-works">
-                <p><strong>Why This Works:</strong> Lime and honey boost metabolism. Vegetable poha is a light and nutritious breakfast. Fruits provide vitamins and antioxidants. Whole wheat pasta is high in fiber, and the vegetable soup and salad keep you full without excess calories. Sunflower seeds provide healthy fats. Tofu stir-fry is a healthy, protein-rich dinner option.</p>
-            </div>
-            <div class="exercise-plan">
-                <h3>Day 7 Exercise Plan</h3>
-                <ul>
-                    <li>Warm-up – 10 mins</li>
-                    <li>Jogging or brisk walk – 20 mins</li>
-                    <li>Push-ups – 3 sets of 20 reps</li>
-                    <li>Squats – 3 sets of 25 reps</li>
-                    <li>Planks – 2 sets of 1 minute</li>
-                    <li>Cool off with stretching exercises</li>
-                </ul>
-            </div>
-            <div class="how-you-will-feel">
-                <p><strong>How You Will Feel By The End Of Day 7:</strong> You will feel accomplished and more in control of your diet and exercise. Evaluate how your body has responded to the changes and make any necessary adjustments. Celebrate your progress and continue with healthy habits.</p>
+            <input type="checkbox" id="toggleDay7">
+            <label for="toggleDay7">
+                <h2>Day 7 (1500 Calories)</h2>
+            </label>
+            <div class="content">
+                <div class="meals">
+                    <h3>Early Morning (6:00 a.m.)</h3>
+                    <ul>
+                        <li>1 cup warm water with lemon and honey</li>
+                    </ul>
+                    <h3>Breakfast (7:00 a.m.)</h3>
+                    <ul>
+                        <li>1 bowl of vegetable upma + 1 cup green tea</li>
+                    </ul>
+                    <h3>Mid Morning (10:00 a.m.)</h3>
+                    <ul>
+                        <li>1 small bowl of mixed fruits</li>
+                    </ul>
+                    <h3>Lunch (12:30-1:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup brown rice + 1 cup vegetable curry + 1 cup dal + salad</li>
+                    </ul>
+                    <h3>Post-Lunch (3:30-4:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup green tea + 1 handful of cashews</li>
+                    </ul>
+                    <h3>Dinner (7:00 p.m.)</h3>
+                    <ul>
+                        <li>2 chapatis + 1 cup mixed vegetable curry + 1 small
+
+ bowl of curd</li>
+                    </ul>
+                    <h3>Bed Time (10:00 p.m.)</h3>
+                    <ul>
+                        <li>1 cup warm milk with a pinch of saffron</li>
+                    </ul>
+                </div>
+                <div class="why-this-works">
+                    <p><strong>Why This Works:</strong> Day 7’s diet continues to provide a balanced intake of nutrients while keeping calories in check. Warm water with lemon and honey starts your day well. Vegetable upma offers a nutritious breakfast option. Mixed fruits provide a refreshing and healthy snack. Brown rice, vegetable curry, and dal offer a well-rounded lunch. Green tea and cashews make for a nutritious afternoon snack. Chapatis with vegetable curry and curd are a satisfying dinner choice. Saffron milk before bed promotes relaxation and aids in restful sleep.</p>
+                </div>
+                <div class="exercise-plan">
+                    <h3>Day 7 Exercise Plan</h3>
+                    <ul>
+                        <li>Warm-up – 10 mins</li>
+                        <li>Cycling – 20 minutes</li>
+                        <li>Burpees – 3 sets of 20 reps</li>
+                        <li>Mountain climbers – 2 sets of 30 reps</li>
+                        <li>Tricep dips – 2 sets of 25 reps</li>
+                        <li>Leg raises – 2 sets of 25 reps</li>
+                        <li>Crunches – 3 sets of 30 reps</li>
+                        <li>Brisk walk – 10 minutes</li>
+                        <li>Cool off by doing some stretching exercises</li>
+                    </ul>
+                </div>
+                <div class="how-you-will-feel">
+                    <p><strong>How You Will Feel By The End Of Day 7:</strong> By the end of Day 7, you will have a clearer picture of your progress and how well your body is adapting to the new routine. You should feel a significant boost in energy levels and see some improvements in your fitness and overall well-being. Your body will be adjusting to the routine, and you’ll likely notice improvements in muscle tone and endurance. Keep up with the balanced diet and exercise plan to continue your progress.</p>
+                </div>
             </div>
         </div>
+
     </div>
 </body>
 </html>
+```
