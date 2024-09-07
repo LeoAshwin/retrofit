@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness and Diet Self-Checkups</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM8uLSY2z_OIcuZ8kfdPB9aXZ2SEd5roiGJQ&s);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 50px;
+            
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: forestgreen;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            margin: 0;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            margin: 0 0 20px 0; 
+            border: 1px solid #0056b3;
+        }
+
+        .content {
+            display: none;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            background:  white;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content p {
+            margin: 15px 0;
+            color:red;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .toggle-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin: 30px auto;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color:forestgreen;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+                padding: 10px;
+                color:forestgreen;
+            }
+
+            .toggle-btn {
+                font-size: 0.875rem;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Basic Self-Checkups</h1>
+
+        <!-- Fitness Self-Checkups Section -->
+        <h2 onclick="toggleSection('fitness')">Fitness Self-Checkups</h2>
+        <div id="fitness" class="content">
+            <p><strong>1. Resting Heart Rate (RHR):</strong> Measure your pulse when at rest. Lower RHR indicates better cardiovascular fitness.</p>
+            <p><strong>2. Step Test:</strong> Step up and down on a bench for 3 minutes and check your heart rate to assess endurance.</p>
+            <p><strong>3. Flexibility Test:</strong> Touch your toes or do a sit-and-reach test to check joint flexibility.</p>
+            <p><strong>4. Push-Up Test:</strong> Count how many push-ups you can do in 1 minute to evaluate upper body strength.</p>
+            <p><strong>5. Single-Leg Stand:</strong> Test your balance by standing on one leg with your eyes closed.</p>
+            <p><strong>6. Waist Circumference:</strong> Measure your waist at the navel to check for health risks associated with excess abdominal fat.</p>
+        </div>
+
+        <!-- Diet Self-Checkups Section -->
+        <h2 onclick="toggleSection('diet')" >Diet Self-Checkups</h2>
+        <div id="diet" class="content" >
+            <p><strong>1. Hydration Levels:</strong> Monitor urine color (light yellow is optimal) to assess hydration.</p>
+            <p><strong>2. Daily Calorie Intake:</strong> Use a food diary or app to track your daily intake for weight management.</p>
+            <p><strong>3. Protein Intake:</strong> Track protein to ensure you’re meeting fitness goals. Aim for 0.8-1.2g/kg body weight.</p>
+            <p><strong>4. Portion Control:</strong> Use hand portions to control serving sizes (fist for carbs, palm for protein, thumb for fats).</p>
+            <p><strong>5. Balanced Diet:</strong> Ensure you’re consuming foods from all essential food groups.</p>
+            <p><strong>6. Macro and Micronutrient Check:</strong> Track essential nutrients to prevent deficiencies.</p>
+            <p><strong>7. Body Fat Percentage:</strong> Use a body fat caliper or smart scale to monitor body composition.</p>
+            <p><strong>8. Meal Timing:</strong> Track meal frequency to maintain stable energy levels and avoid overeating.</p>
+        </div>
+
+        <!-- Button to Toggle All Sections -->
+        <button class="toggle-btn" onclick="toggleAll()">See All</button>
+    </div>
+
+    <script>
+        // Function to toggle individual sections
+        function toggleSection(sectionId) {
+            var content = document.getElementById(sectionId);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+
+        // Function to toggle all sections at once
+        function toggleAll() {
+            var fitnessContent = document.getElementById('fitness');
+            var dietContent = document.getElementById('diet');
+
+            if (fitnessContent.style.display === "block" && dietContent.style.display === "block") {
+                // Hide both sections
+                fitnessContent.style.display = "none";
+                dietContent.style.display = "none";
+            } else {
+                // Show both sections
+                fitnessContent.style.display = "block";
+                dietContent.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
