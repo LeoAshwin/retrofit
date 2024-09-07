@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing Techniques</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://ik.imagekit.io/xib7veoyx/breathing.webp?updatedAt=1723383158506");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+        h1{color:red;}
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        .card-header {
+            background-color: #d0b200;
+            color: gray;
+        }
+        .card img {
+            width: 80px;
+            height: 80px;
+            cursor: pointer; /* Add cursor pointer to indicate interactivity */
+        }
+
+        .card-body{color:blue;}
+        .modal-body img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4" >Breathing Techniques</h1>
+        <div id="accordion">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <img src="https://www.shutterstock.com/image-vector/man-doing-practice-inhale-exhalebreath-260nw-2230870121.jpg" alt="Pursed Lip Breathing" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://www.shutterstock.com/image-vector/man-doing-practice-inhale-exhalebreath-260nw-2230870121.jpg')" /> Pursed Lip Breathing
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>This simple breathing technique helps to slow down your breathing pace by having you apply deliberate effort in each breath.</p>
+                        <p>Practice using this breath 4 to 5 times a day when you begin so that you can correctly learn the breathing pattern.</p>
+                        <ul>
+                            <li>Relax your neck and shoulders.</li>
+                            <li>Keeping your mouth closed, inhale slowly through your nose for 2 counts.</li>
+                            <li>Pucker or purse your lips as though you were going to whistle.</li>
+                            <li>Exhale slowly by blowing air through your pursed lips for a count of 4.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <img src="https://www.researchgate.net/publication/358971097/figure/fig2/AS:1129724545896450@1646358729513/Diaphragmatic-breathing-Notes-When-the-patient-inhales-the-abdominal-wall-moves.png" alt="Diaphragmatic Breathing" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://www.researchgate.net/publication/358971097/figure/fig2/AS:1129724545896450@1646358729513/Diaphragmatic-breathing-Notes-When-the-patient-inhales-the-abdominal-wall-moves.png')" /> Diaphragmatic Breathing
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Diaphragmatic breathing (aka belly breathing) helps you use your diaphragm properly. It can be particularly helpful for people with breathing challenges due to chronic conditions.</p>
+                        <p>Practice diaphragmatic breathing for 5 to 10 minutes 3 to 4 times daily.</p>
+                        <ul>
+                            <li>Lie on your back with your knees slightly bent and your head on a pillow.</li>
+                            <li>Place one hand on your upper chest and one hand below your rib cage.</li>
+                            <li>Slowly inhale through your nose, feeling your stomach pressing into your hand.</li>
+                            <li>Exhale using pursed lips, keeping your upper hand still.</li>
+                            <li>Try placing a book on your abdomen to increase difficulty.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <img src="https://santecares.com/wp-content/uploads/2019/08/8-16-1.jpg" alt="Breath Focus Technique" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://santecares.com/wp-content/uploads/2019/08/8-16-1.jpg')" /> Breath Focus Technique
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>This technique uses imagery or focus words and phrases to enhance relaxation.</p>
+                        <p>Start with a 10-minute session and gradually increase the duration to at least 20 minutes.</p>
+                        <ul>
+                            <li>Bring your awareness to your breaths and notice differences between normal and deep breathing.</li>
+                            <li>Place one hand below your belly button, and notice how it rises and falls with each breath.</li>
+                            <li>Combine deep breathing with a focus word or phrase like "peace" or "relax".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <img src="https://www.yogateket.com/images/0JvS4YkTV1A7ktW8u0Wv_Lions_breath2.jpg" alt="Lion’s Breath" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://www.yogateket.com/images/0JvS4YkTV1A7ktW8u0Wv_Lions_breath2.jpg')" /> Lion’s Breath
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Lion’s breath is an energizing yoga practice that helps relieve tension in your jaw and facial muscles.</p>
+                        <ul>
+                            <li>Sit comfortably with your palms against your knees.</li>
+                            <li>Inhale deeply through your nose and open your eyes wide.</li>
+                            <li>Open your mouth wide, stick out your tongue, and make a long "haaa" sound as you exhale.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBre4Dhg8FLsfT7jNynpt5oG5cXqNVx3ADGA&s" alt="Alternate Nostril Breathing" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBre4Dhg8FLsfT7jNynpt5oG5cXqNVx3ADGA&s')" /> Alternate Nostril Breathing
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Alternate nostril breathing is a relaxation technique that enhances cardiovascular function and lowers heart rate.</p>
+                        <ul>
+                            <li>Close your right nostril with your thumb and inhale through your left nostril.</li>
+                            <li>Close your left nostril with your fingers and exhale through your right nostril.</li>
+                            <li>Inhale through your right nostril, close it, and exhale through your left nostril.</li>
+                            <li>Continue this pattern for up to 5 minutes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-header" id="headingSix">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <img src="https://health.cureforsure.com/wp-content/uploads/2020/07/kapalbhati-Pranayama2-e1594395657372.jpg" alt="Equal Breathing" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://health.cureforsure.com/wp-content/uploads/2020/07/kapalbhati-Pranayama2-e1594395657372.jpg')" /> Equal Breathing
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Equal breathing involves making your inhales and exhales of the same length, helping to bring balance and relaxation.</p>
+                        <ul>
+                            <li>Choose a comfortable seated position.</li>
+                            <li>Breathe in and out through your nose, counting the duration of each breath.</li>
+                            <li>Practice for at least 5 minutes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="card">
+                <div class="card-header" id="headingSeven">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDiMQHUfReAttVZBwhcsPQ3gF0qU0q3MjRfQ&s" alt="Resonant Breathing" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDiMQHUfReAttVZBwhcsPQ3gF0qU0q3MjRfQ&s')" /> Resonant Breathing
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Resonant breathing involves breathing at a rate of 5 full breaths per minute, helping to reduce stress and improve heart rate variability.</p>
+                        <ul>
+                            <li>Inhale for a count of 5.</li>
+                            <li>Exhale for a count of 5.</li>
+                            <li>Continue this pattern for a few minutes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="card">
+                <div class="card-header" id="headingEight">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            <img src="https://yogajala.com/wp-content/uploads/2-78.jpg" alt="Sitali Breath" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://yogajala.com/wp-content/uploads/2-78.jpg')" /> Sitali Breath
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Sitali breath helps lower body temperature and relax your mind.</p>
+                        <ul>
+                            <li>Stick out your tongue and curl the outer edges together.</li>
+                            <li>Inhale through your mouth.</li>
+                            <li>Exhale out through your nose.</li>
+                            <li>Continue for up to 5 minutes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 9 -->
+            <div class="card">
+                <div class="card-header" id="headingNine">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            <img src="https://imgeng.jagran.com/images/2023/sep/breathing-exercises1695803504680.jpg" alt="Deep Breathing" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://imgeng.jagran.com/images/2023/sep/breathing-exercises1695803504680.jpg')" /> Deep Breathing
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Deep breathing helps to relieve shortness of breath and helps you feel more relaxed and centered.</p>
+                        <ul>
+                            <li>Stand or sit, drawing your elbows back slightly to allow your chest to expand.</li>
+                            <li>Inhale deeply through your nose.</li>
+                            <li>Retain your breath for a count of 5.</li>
+                            <li>Exhale slowly through your nose.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 10 -->
+            <div class="card">
+                <div class="card-header" id="headingTen">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                            <img src="https://cdn.prod.website-files.com/61384703bca2db472ca04cfa/64a42418252ef876d31bae12_Untitled-design--91-.webp" alt="Humming Bee Breath (Bhramari)" data-toggle="modal" data-target="#imageModal" onclick="openModal('https://cdn.prod.website-files.com/61384703bca2db472ca04cfa/64a42418252ef876d31bae12_Untitled-design--91-.webp')" /> Humming Bee Breath (Bhramari)
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>This practice involves making a humming sound to create a calming effect and reduce frustration, anxiety, and anger.</p>
+                        <ul>
+                            <li>Close your eyes and relax your face.</li>
+                            <li>Place your fingers on the tragus of your ears.</li>
+                            <li>Inhale and make a loud humming sound while keeping your mouth closed.</li>
+                            <li>Continue as long as comfortable.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Modal HTML -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Demo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="Image Preview" id="modalImage">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script to handle image modal -->
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+        }
+    </script>
+</body>
+</html>

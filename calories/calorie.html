@@ -6,58 +6,115 @@
     <title>Effective Calorie-Burning Exercises</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-image: url("https://ik.imagekit.io/tariq/meals.jpg.jpg?updatedAt=1711122742183");
-            background-size: cover; /* Ensures the image covers the entire container */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
         }
         header {
-            background: #333;
+            background: rgba(0, 0, 0, 0.7);
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #ddd 3px solid;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         header h1 {
-            text-align: center;
             margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
         }
         .content {
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            background: #fff;
-            margin-top: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         h2 {
-            color: #333;
+            color: #4a90e2;
+            font-size: 2em;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         .exercise {
             margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .exercise h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-top: 0;
         }
         .exercise p {
-            margin: 0;
+            margin: 5px 0;
         }
-        .exercise ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-        .exercise li {
+        .toggle-button {
+            background: #4a90e2;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             margin-bottom: 10px;
+            display: block;
+            text-align: center;
+            font-size: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .toggle-button:hover {
+            background: #357abd;
+        }
+        .hidden-content {
+            display: none;
         }
         footer {
-            background: #333;
+            background: rgba(0, 0, 0, 0.7);
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px;
             margin-top: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4a90e2;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .scroll-to-top:hover {
+            background: #357abd;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            .exercise h3 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
@@ -65,6 +122,7 @@
     <header>
         <div class="container">
             <h1>Effective Calorie-Burning Exercises</h1>
+            <h3>Click on button for Information</h3>
         </div>
     </header>
 
@@ -72,76 +130,109 @@
         <div class="content">
             <section>
                 <h2>High-Intensity Interval Training (HIIT)</h2>
-                <p>HIIT involves short bursts of exercise at more than 70% of your aerobic capacity, alternating between high-intensity activity and rest periods. This method is effective for burning calories quickly in 30 minutes or less.</p>
                 
                 <div class="exercise">
-                    <h3>High-Knee Running</h3>
-                    <p>Calories burned in 1 minute: 3.5 to 7</p>
-                    <p>Run in place while lifting your knees as high as possible. Quickly pump your arms up and down.</p>
+                    <button class="toggle-button" onclick="toggleContent('highKneeRunning')"> High-Knee Running</button>
+                    <div id="highKneeRunning" class="hidden-content">
+                        <h3>High-Knee Running</h3>
+                        <p>Calories burned in 1 minute: 3.5 to 7</p>
+                        <p>Run in place while lifting your knees as high as possible. Quickly pump your arms up and down.</p>
+                    </div>
                 </div>
 
                 <div class="exercise">
-                    <h3>Butt Kicks</h3>
-                    <p>Calories burned in 1 minute: 8 to 12</p>
-                    <p>Lift one heel toward your butt and then the other heel. Alternate rapidly while pumping your arms.</p>
+                    <button class="toggle-button" onclick="toggleContent('buttKicks')">Butt Kicks</button>
+                    <div id="buttKicks" class="hidden-content">
+                        <h3>Butt Kicks</h3>
+                        <p>Calories burned in 1 minute: 8 to 12</p>
+                        <p>Lift one heel toward your butt and then the other heel. Alternate rapidly while pumping your arms.</p>
+                    </div>
                 </div>
 
                 <div class="exercise">
-                    <h3>Mountain Climbers</h3>
-                    <p>Calories burned in 1 minute: 7 to 12</p>
-                    <p>Start in a plank position with shoulders over your hands. Lift one knee toward your chest, return to plank, and repeat with the other knee. Repeat quickly.</p>
+                    <button class="toggle-button" onclick="toggleContent('mountainClimbers')">Mountain Climbers</button>
+                    <div id="mountainClimbers" class="hidden-content">
+                        <h3>Mountain Climbers</h3>
+                        <p>Calories burned in 1 minute: 7 to 12</p>
+                        <p>Start in a plank position with shoulders over your hands. Lift one knee toward your chest, return to plank, and repeat with the other knee. Repeat quickly.</p>
+                    </div>
                 </div>
             </section>
 
             <section>
                 <h2>Swimming</h2>
+                <div class="exercise">
+                    <button class="toggle-button" onclick="toggleContent('swimming')">Swim</button>
+                    <div id="swimming" class="hidden-content">
+                
                 <p>Calories burned in 30 minutes: 198 to 294</p>
                 <p>Swimming is a low-impact workout that also improves muscle strength, blood flow, lung, and heart capacity. It can be an excellent alternative for those with joint pain or limited mobility.</p>
-            </section>
+                    </div></div></section>
 
             <section>
                 <h2>Stationary Bicycling</h2>
+                <div class="exercise">
+                    <button class="toggle-button" onclick="toggleContent('bic')">Bicycling</button>
+                    <div id="bic" class="hidden-content">
                 <p>Calories burned in 30 minutes: 210 to 311</p>
                 <p>Try high-intensity intervals on a stationary bike. Warm up for five minutes and alternate between one-minute speed and two-minute recovery intervals. Your speed intervals should be at a 7 to 9 intensity on a scale from 0 to 10.</p>
-            </section>
+                    </div></div></section>
 
             <section>
                 <h2>Sprints</h2>
+                <div class="exercise">
+                    <button class="toggle-button" onclick="toggleContent('Spr')">Sprinting</button>
+                    <div id="Spr" class="hidden-content">
                 <p>Calories burned in 1 minute: 15 to 22</p>
                 <p>Short, high-intensity sprints can rapidly burn calories. Consider doing 3 sets of 100-meter sprints or other sprint interval training. Warm up with jumping jacks or high-knee running.</p>
-            </section>
+            </div></div></section>
 
             <section>
                 <h2>At-Home Calorie-Burning Exercises</h2>
                 
                 <div class="exercise">
-                    <h3>Walking</h3>
-                    <p>Calories burned per minute: 3.1 to 4.6</p>
-                    <p>Walking around your home or backyard is simple and ideal for recovery. Adding housework while walking can increase calorie burn.</p>
+                    <button class="toggle-button" onclick="toggleContent('walking')"> Walking</button>
+                    <div id="walking" class="hidden-content">
+                        <h3>Walking</h3>
+                        <p>Calories burned per minute: 3.1 to 4.6</p>
+                        <p>Walking around your home or backyard is simple and ideal for recovery. Adding housework while walking can increase calorie burn.</p>
+                    </div>
                 </div>
 
                 <div class="exercise">
-                    <h3>Running</h3>
-                    <p>Calories burned per minute: 10.8 to 16</p>
-                    <p>Running is a highly effective calorie-burner and can be done anywhere. The faster you run, the more calories you’ll burn.</p>
+                    <button class="toggle-button" onclick="toggleContent('running')"> Running</button>
+                    <div id="running" class="hidden-content">
+                        <h3>Running</h3>
+                        <p>Calories burned per minute: 10.8 to 16</p>
+                        <p>Running is a highly effective calorie-burner and can be done anywhere. The faster you run, the more calories you’ll burn.</p>
+                    </div>
                 </div>
 
                 <div class="exercise">
-                    <h3>Aerobic Dance</h3>
-                    <p>Calories burned per minute: 6.6 to 9.8</p>
-                    <p>Dance workouts like Zumba or Bokwa are fun and effective for raising your heart rate and burning calories.</p>
+                    <button class="toggle-button" onclick="toggleContent('aerobicDance')">Aerobic Dance</button>
+                    <div id="aerobicDance" class="hidden-content">
+                        <h3>Aerobic Dance</h3>
+                        <p>Calories burned per minute: 6.6 to 9.8</p>
+                        <p>Dance workouts like Zumba or Bokwa are fun and effective for raising your heart rate and burning calories.</p>
+                    </div>
                 </div>
 
                 <div class="exercise">
-                    <h3>Jumping Jacks</h3>
-                    <p>Calories burned per minute: 8 to 11.8</p>
-                    <p>Jumping jacks are a full-body cardio exercise that is easy to do at home. They can be used as part of a warm-up, HIIT workout, or general routine.</p>
+                    <button class="toggle-button" onclick="toggleContent('jumpingJacks')"> Jumping Jacks</button>
+                    <div id="jumpingJacks" class="hidden-content">
+                        <h3>Jumping Jacks</h3>
+                        <p>Calories burned per minute: 8 to 11.8</p>
+                        <p>Jumping jacks are a full-body cardio exercise that is easy to do at home. They can be used as part of a warm-up, HIIT workout, or general routine.</p>
+                    </div>
                 </div>
 
                 <div class="exercise">
-                    <h3>Jumping Rope</h3>
-                    <p>Calories burned per minute: 7.6 to 9.8</p>
-                    <p>Jumping rope is a compact exercise that builds lower leg strength while increasing your heart rate. It’s great for limited spaces.</p>
+                    <button class="toggle-button" onclick="toggleContent('jumpingRope')"> Jumping Rope</button>
+                    <div id="jumpingRope" class="hidden-content">
+                        <h3>Jumping Rope</h3>
+                        <p>Calories burned per minute: 7.6 to 9.8</p>
+                        <p>Jumping rope is a compact exercise that builds lower leg strength while increasing your heart rate. It’s great for limited spaces.</p>
+                    </div>
                 </div>
             </section>
 
@@ -156,5 +247,36 @@
         </div>
     </div>
 
+    <div id="scrollToTop" class="scroll-to-top">↑</div>
+
+    <script>
+        // JavaScript function to toggle visibility of exercise details
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.classList.contains('hidden-content')) {
+                content.classList.remove('hidden-content');
+            } else {
+                content.classList.add('hidden-content');
+            }
+        }
+
+        // JavaScript to show/hide scroll-to-top button
+        window.addEventListener('scroll', () => {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (window.scrollY > 300) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+
+        // JavaScript to scroll to the top smoothly
+        document.getElementById('scrollToTop').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
