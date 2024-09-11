@@ -5,7 +5,10 @@ html, body {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpYc1TYQVl65FOy9fONF-ROa8-dGuFXQeVPg&s);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,15 +17,16 @@ body {
 .container {
     text-align: center;
     width: 500px;
+    color:white;
 }
 
 h1 {
-    color: #333;
+    color: red;
     margin-bottom: 20px;
 }
 
 form {
-    background: #fff;
+    background: #1618a3;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

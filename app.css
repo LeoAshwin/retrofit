@@ -15,6 +15,9 @@
     background-color:#183b56 ;
     font-style: italic;
 }
+.image-container {
+  margin-right: 10px; /* Space between the image and the text */
+}
 .meals{
   background-image: url("https://ik.imagekit.io/tariq/meals.jpg.jpg?updatedAt=1711122742183");
   height:100vh ;
@@ -47,4 +50,19 @@
 
 .scroll-up-btn i {
   pointer-events: none; 
+}
+.feedback-button {
+  background-color: #007bff; /* Blue background */
+  color:white; /* White text */
+  padding: 10px 20px; /* Some padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Font size */
+  
+}
+.feedback-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
