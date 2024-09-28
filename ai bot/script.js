@@ -4,91 +4,89 @@ const chatbox = document.querySelector(".chatbox");
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
-let userMessage = null; // Variable to store user's message
-const inputInitHeight = chatInput.scrollHeight;
+let userResponses = {};
+let currentStep = 0;
 
-// API configuration
-const API_KEY = "AIzaSyBsWazU0SPSoiViFSshuDdilt-clpmpH5w"; // Your API key here
-const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
+const steps = [
+    { question: "What is your gender?", key: "gender" },
+    { question: "How old are you?", key: "age" },
+    { question: "Please tell me about your medical history.", key: "medicalHistory" },
+    { question: "What foods do you dislike?", key: "dislikedFoods" },
+];
 
 const createChatLi = (message, className) => {
-  // Create a chat <li> element with passed message and className
-  const chatLi = document.createElement("li");
-  chatLi.classList.add("chat", `${className}`);
-  let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
-  chatLi.innerHTML = chatContent;
-  chatLi.querySelector("p").textContent = message;
-  return chatLi; // return chat <li> element
-}
+    const chatLi = document.createElement("li");
+    chatLi.classList.add("chat", className);
+    chatLi.innerHTML = `<p>${message}</p>`;
+    return chatLi;
+};
 
-const generateResponse = async (chatElement) => {
-  const messageElement = chatElement.querySelector("p");
+const sendToGeminiAI = async (userData) => {
+    const API_KEY =  "AIzaSyBsWazU0SPSoiViFSshuDdilt-clpmpH5w"; // Replace with your actual API key
+    const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
 
-  // Define the properties and message for the API request
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ 
-      contents: [{ 
-        role: "user", 
-        parts: [{ text: userMessage }] 
-      }] 
-    }),
-  }
+    const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            contents: [
+                {
+                    role: "user",
+                    parts: [{ text: `Create a customized diet plan for a ${userData.age}-year-old ${userData.gender}. They have a medical history of ${userData.medicalHistory} and dislike ${userData.dislikedFoods}.` }]
+                }
+            ],
+        }),
+    };
 
-  // Send POST request to API, get response and set the reponse as paragraph text
-  try {
-    const response = await fetch(API_URL, requestOptions);
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.error.message);
-    
-    // Get the API response text and update the message element
-    messageElement.textContent = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1');
-  } catch (error) {
-    // Handle error
-    messageElement.classList.add("error");
-    messageElement.textContent = error.message;
-  } finally {
+    try {
+        const response = await fetch(API_URL, requestOptions);
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error.message);
+        return data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1');
+    } catch (error) {
+        console.error("Error:", error);
+        return "Sorry, I couldn't generate a diet plan right now.";
+    }
+};
+
+const handleChat = async () => {
+    const userMessage = chatInput.value.trim();
+    if (!userMessage) return;
+
+    // Clear the input
+    chatInput.value = "";
+
+    // Append user's message
+    chatbox.appendChild(createChatLi(userMessage, "outgoing"));
     chatbox.scrollTo(0, chatbox.scrollHeight);
-  }
-}
 
-const handleChat = () => {
-  userMessage = chatInput.value.trim(); // Get user entered message and remove extra whitespace
-  if (!userMessage) return;
+    // Store the response
+    userResponses[steps[currentStep].key] = userMessage;
+    currentStep++;
 
-  // Clear the input textarea and set its height to default
-  chatInput.value = "";
-  chatInput.style.height = `${inputInitHeight}px`;
+    // Check if there are more questions
+    if (currentStep < steps.length) {
+        setTimeout(() => {
+            chatbox.appendChild(createChatLi(steps[currentStep].question, "incoming"));
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+        }, 600);
+    } else {
+        // All questions have been answered, now generate the diet plan
+        setTimeout(async () => {
+            const dietPlan = await sendToGeminiAI(userResponses);
+            chatbox.appendChild(createChatLi("Thank you for the information! Here is your customized diet plan:\n\n" + dietPlan, "incoming"));
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+        }, 600);
+    }
+};
 
-  // Append the user's message to the chatbox
-  chatbox.appendChild(createChatLi(userMessage, "outgoing"));
-  chatbox.scrollTo(0, chatbox.scrollHeight);
-
-  setTimeout(() => {
-    // Display "Thinking..." message while waiting for the response
-    const incomingChatLi = createChatLi("Thinking...", "incoming");
-    chatbox.appendChild(incomingChatLi);
-    chatbox.scrollTo(0, chatbox.scrollHeight);
-    generateResponse(incomingChatLi);
-  }, 600);
-}
-
-chatInput.addEventListener("input", () => {
-  // Adjust the height of the input textarea based on its content
-  chatInput.style.height = `${inputInitHeight}px`;
-  chatInput.style.height = `${chatInput.scrollHeight}px`;
-});
-
-chatInput.addEventListener("keydown", (e) => {
-  // If Enter key is pressed without Shift key and the window 
-  // width is greater than 800px, handle the chat
-  if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
-    e.preventDefault();
-    handleChat();
-  }
-});
-
+// Event Listeners
 sendChatBtn.addEventListener("click", handleChat);
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+// Adjust textarea height
+chatInput.addEventListener("input", () => {
+    chatInput.style.height = 'auto'; // Reset height
+    chatInput.style.height = `${chatInput.scrollHeight}px`; // Set to new height
+});
