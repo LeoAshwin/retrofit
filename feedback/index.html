@@ -4,11 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
-    <link rel="stylesheet" href="/feedback/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module">
+        // Import necessary functions from Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDnOK7vujEguISq48WZaad--YSlOEZTmzY",
+  authDomain: "retrofit-3270d.firebaseapp.com",
+  databaseURL: "https://retrofit-3270d-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "retrofit-3270d",
+  storageBucket: "retrofit-3270d.appspot.com",
+  messagingSenderId: "1064644650311",
+  appId: "1:1064644650311:web:5e0286f2c7b5386fa89862"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Event listener for feedback form submission
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("feedbackForm").addEventListener("submit", async (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const feedback = document.getElementById("feedback").value;
+                const feedbackId = Date.now(); // Simple ID based on timestamp
+
+                try {
+                    await set(ref(db, 'feedback/' + feedbackId), {
+                        name: name,
+                        email: email,
+                        feedback: feedback,
+                        createdAt: new Date().toISOString()
+                    });
+
+                    window.location.href = "../index.html"; // Redirect to index.html after submission
+                } catch (error) {
+                    alert("Error submitting feedback: " + error.message);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Feedback Form</h1>
+        
+        <!-- Feedback Form -->
         <form id="feedbackForm" novalidate>
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -28,6 +75,5 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-    <script src="/feedback/script.js"></script>
 </body>
 </html>

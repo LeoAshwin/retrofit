@@ -1,68 +1,139 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
 
+/* Navbar Styles */
+nav {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(13, 36, 54, 0.8);
+  transition: background-color 0.3s ease;
+}
 
+nav:hover {
+  background-color: rgba(13, 36, 54, 1);
+}
+
+/* Hero Section Styles */
 .bg-hero-section {
-  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/foodmunch-banner-bg.png");
-  height: 100vh;
-  background-size: 2500px;
+  background-image: url('https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/foodmunch-banner-bg.png');
+  background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-.cal{
-    border-width: 5px;
-    border-color:#183b56 ;
-    background-color:#183b56 ;
-    font-style: italic;
-}
-.image-container {
-  margin-right: 10px; /* Space between the image and the text */
-}
-.meals{
-  background-image: url("https://ik.imagekit.io/tariq/meals.jpg.jpg?updatedAt=1711122742183");
-  height:100vh ;
-  background-repeat:no-repeat;
-  background-size:cover;
-}
-.calorie{
-  background-color: rgb(13, 222, 225);
-  
+  padding: 5rem 0;
+  animation: fadeIn 1.5s ease-in-out;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 }
 
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Section Animation */
+section {
+  padding: 4rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Styles */
+.bg-white {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bg-white:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styles */
+footer {
+  background-color: #0d2436;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.5s forwards;
+  animation-delay: 0.5s;
+  padding: 2rem 0;
+}
+
+/* Link Hover Effects */
+footer a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  color: #d0b200;
+  transform: scale(1.05);
+}
+
+/* Feedback Button Styles */
+.feedback-button {
+  background-color: #d0b200;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feedback-button:hover {
+  transform: scale(1.05);
+  background-color: #b09b00;
+}
+
+/* Scroll Up Button Styles */
 .scroll-up-btn {
-  display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: red;
-  color: #fff;
+  background: #d0b200;
   border: none;
   border-radius: 50%;
-  padding: 15px;
-  font-size: 24px;
+  padding: 10px;
   cursor: pointer;
-  color: blue;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .scroll-up-btn:hover {
-  background-color:red;
+  transform: scale(1.1);
+  background-color: #b09b00;
 }
 
-.scroll-up-btn i {
-  pointer-events: none; 
-}
-.feedback-button {
-  background-color: #007bff; /* Blue background */
-  color:white; /* White text */
-  padding: 10px 20px; /* Some padding */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  text-align: center; /* Center text */
-  text-decoration: none; /* Remove underline */
-  font-size: 16px; /* Font size */
-  
-}
-.feedback-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .bg-hero-section {
+      padding: 3rem 0;
+      text-align: center;
+  }
+
+  .bg-hero-section h1 {
+      font-size: 2rem;
+  }
 }
